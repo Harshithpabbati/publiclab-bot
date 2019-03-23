@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '10'
+- '9'
+- '8'
+before_script:
+  ln -s $TRAVIS_BUILD_DIR/config/config-example.js $TRAVIS_BUILD_DIR/config/config.js
+notifications:
+  email: false
+  webhooks:
+    urls:
+    - https://publiclab.org/publiclabbot/travis
+    on_success: always
+    on_failure: always
